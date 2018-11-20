@@ -1,4 +1,12 @@
+/*
+* No flutter as tabs são instanciada apenas quando necessarios, ou seja qualquer
+* dado dinamico em uma tab será perdida quando outra for selecionada, para evitar
+* isso utiliza-se padrões com BLoC.
+*
+* */
+
 import 'package:flutter/material.dart';
+
 
 class TabsSample extends StatelessWidget {
 
@@ -17,6 +25,7 @@ class TabsSample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: 1, //posição selecionada assim que cria as tabs (inicia em 0)
       length: tabs.length,
       child: Scaffold(
         appBar: AppBar(
@@ -43,14 +52,9 @@ class TabsSample extends StatelessWidget {
   }
 
   Widget tabSection(TabModel tab) {
-    return Column(
-      children: <Widget>[
-        Icon(tab.icon),
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Text(tab.text),
-        )
-      ],
+    return Tab(
+      text: tab.text,
+      icon: Icon(tab.icon),
     );
   }
 }
