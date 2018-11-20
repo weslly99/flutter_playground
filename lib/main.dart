@@ -57,5 +57,5 @@ class MyHomePageState extends State<MyHomePage>{
 final List<SampleName> itens = <SampleName>[
   SampleName(name: 'App Bar'),
   SampleName(name: 'Tabs'),
-  SampleName(name: 'Tab Custom'),
+  SampleName(name: 'Tab Custom')
 ];
