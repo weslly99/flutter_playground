@@ -5,6 +5,7 @@ import 'model/sample_name.dart';
 import 'ui/tab_custom_sample.dart';
 import 'ui/appbar_sample.dart';
 import 'ui/tabs_sample.dart';
+import 'ui/navigator_sample.dart';
 
 
 void main() => runApp(MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         Values.appBarSampleRoute: (BuildContext context)=> AppBarSample(),
         Values.tabsSampleRoute: (BuildContext context)=> TabsSample(),
         Values.tabCustomSampleRoute: (BuildContext context)=> TabCustomSample(),
+        Values.navigatorCustomSampleRoute: (BuildContext context)=> NavigatorSample(),
       },
     );
   }
@@ -57,5 +59,6 @@ class MyHomePageState extends State<MyHomePage>{
 final List<SampleName> itens = <SampleName>[
   SampleName(name: 'App Bar'),
   SampleName(name: 'Tabs'),
-  SampleName(name: 'Tab Custom')
+  SampleName(name: 'Tab Custom'),
+  SampleName(name: 'Navigator')
 ];

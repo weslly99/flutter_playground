@@ -4,6 +4,7 @@ class Values{
   static const String appBarSampleRoute = "/App Bar";
   static const String tabsSampleRoute = "/Tabs";
   static const String tabCustomSampleRoute = "/Tab Custom";
+  static const String navigatorCustomSampleRoute = "/Navigator";
 
   //Fonts
   static const String fontApercuBold = "Apercu-Bold.otf";

@@ -18,13 +18,11 @@ class TabCustomSample extends StatelessWidget {
             ],
           ),
         ),
-        body: Center(
-          child: TabBarView(
+        body:TabBarView(
             children: <Widget>[
-              Text("Sign", style: TextStyle(fontSize: 25.0)),
-              Text("SignUP", style: TextStyle(fontSize: 25.0)),
+              Container(color:Colors.blue[300]),
+              Container(color:Colors.green[300]),
             ],
-          ),
         ),
       ),
     );
@@ -48,12 +46,12 @@ class _CustomPainter extends BoxPainter{
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     assert(configuration != null);
     assert(configuration.size != null);
-
+    
     final Rect rect = offset & configuration.size;
     final Paint paint = Paint();
-    paint.color = Colors.grey[600];
+    paint.color = Colors.grey[400];
     paint.style = PaintingStyle.fill;
-    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(32.0)), paint);
+    canvas.drawRRect(RRect.fromRectAndRadius(rect, Radius.circular(12.0)), paint);
    }
 
 }
