@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class NavigatorSample extends StatelessWidget {
+final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
-
+    
     return Scaffold(
       key: scaffoldkey,
       appBar: AppBar(
@@ -17,7 +18,7 @@ class NavigatorSample extends StatelessWidget {
           )
         ],
       ),
-      drawer: _drawer(),
+      drawer: _drawer(context),
       endDrawer: _filter(context),
       body: Container(
           decoration: BoxDecoration(
@@ -51,7 +52,7 @@ class NavigatorSample extends StatelessWidget {
                     tabs: [Tab(text: 'VALUE'), Tab(text: 'SIZE')]),
               ),
               Container(
-                height: 300.0,
+                height:MediaQuery.of(context).size.height,
                 child: TabBarView(
                   children: <Widget>[
                     Container(color: Colors.purple[300]),
@@ -66,7 +67,7 @@ class NavigatorSample extends StatelessWidget {
     );
   }
 
-  Widget _drawer() {
+  Widget _drawer(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -96,6 +97,11 @@ class NavigatorSample extends StatelessWidget {
           ListTile(
           leading: Icon(Icons.alarm),
           title: Text("Alarm"),
+          onTap: (){
+           Navigator.pop(context);
+            scaffoldkey.currentState.showSnackBar(SnackBar(content:Text("Alarm")));
+             
+          },
          
         ),
         ListTile(
